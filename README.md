@@ -199,4 +199,4 @@ class ExampleTest extends TestCase
 ```
 
 The fixtures listed in the `fixtures()` method will be automatically loaded before a test is executed.
-And as we described before, when a fixture is being loaded, all its dependent fixtures will be automatically loaded first. In the above example, because `UserProfileFixture` depends on UserFixture, when running any test method in the test class, two fixtures will be loaded sequentially: `UserFixture` and `UserProfileFixture`.
+And as we described before, when a fixture is being loaded, all its dependent fixtures will be automatically loaded first. In the above example, because `UserProfileFixture` depends on `UserFixture`, when running any test method in the test class, two fixtures will be loaded sequentially: `UserFixture` and `UserProfileFixture`.
