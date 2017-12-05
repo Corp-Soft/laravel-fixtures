@@ -1,0 +1,38 @@
+{
+    "name": "corp-soft/laravel-fixtures",
+    "description": "Laravel Fixtures are used to load a 'fake' set of data into a database that can then be used for testing",
+    "type": "library",
+    "keywords": [
+        "Fixture"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Chepurnoi",
+            "email": "chepurnoi.igor@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "illuminate/database": "~5.5",
+        "illuminate/support": "~5.5"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "~2.0",
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CorpSoft\\Fixture\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CorpSoft\\Tests\\Fixture\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "cs": "php-cs-fixer fix --dry-run --diff"
+    }
+}
