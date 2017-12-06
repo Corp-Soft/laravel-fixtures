@@ -8,6 +8,8 @@ Fixtures are used to load a "fake" set of data into a database that can then be 
 
 A fixture may depend on other fixtures, specified via its `CorpSoft\Fixture\Fixture::$depends` property. When a fixture is being loaded, the fixtures it depends on will be automatically loaded BEFORE the fixture; and when the fixture is being unloaded, the dependent fixtures will be unloaded AFTER the fixture.
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Corp-Soft/laravel-fixtures/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Corp-Soft/laravel-fixtures/?branch=master)
+
 Installation
 ------------
 
