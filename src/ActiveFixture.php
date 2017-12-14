@@ -39,8 +39,16 @@ class ActiveFixture extends BaseActiveFixture
         $table = $this->getTable();
 
         foreach ($this->getData() as $alias => $row) {
-            $primaryKey = DB::table($table)->insertGetId($row);
-            $this->data[$alias] = array_merge($row, ['id' => $primaryKey]);
+            if (Schema::hasColumns($this->table, ['id'])) {
+                $primaryKey = DB::table($table)->insertGetId($row);
+                $this->data[$alias] = array_merge($row, ['id' => $primaryKey]);
+            } else {
+                if (DB::table($table)->insert($row)) {
+                    $this->data[$alias] = $row;
+                } else {
+                    throw new Exception("Fixture does not loaded for table: {$this->table}");
+                }
+            }
         }
     }
 
