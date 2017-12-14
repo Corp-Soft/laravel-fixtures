@@ -61,6 +61,7 @@ class FixtureTest extends TestCase
         $fixture->load();
 
         $this->assertCount(2, $fixture->data);
+
         $this->assertArraySubset([
             ['email' => 'user1@example.org'],
         ], $fixture->data);
